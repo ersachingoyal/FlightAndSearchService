@@ -1,0 +1,8 @@
+We have used dotenv package here to create the environment variables.
+need to install sequalize , sequalize-cli and mysql2. 
+sequalize is the orm (object relational mapper), sequalize-cli will help us setting up all the database config on its own, and the mysql2 is used to connect sequlaize with the mysql server
+
+we will do npx sequelize init to setup the db structures , but always do this in root directory as inside any folder it will remove the folders of that folder
+
+all the folders that npx sequelize init created we have move them inside the src folder
+inside config.json we need to setup our db details
