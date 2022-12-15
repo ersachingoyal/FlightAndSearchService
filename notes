@@ -14,3 +14,7 @@ in the modes/city.js - these constraints will be added on the js level and migra
 
 
 npx sequelize db:migrate then used this command to create the tabkes actually , this will help migrate the db
+
+we should interact with our models through repository file
+
+ npx sequelize db:migrate:undo   --> to drop the migration, if we have made some changes in the contraints of the DB , then we have to run this command and again run the migrate command
