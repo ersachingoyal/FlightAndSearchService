@@ -6,3 +6,11 @@ we will do npx sequelize init to setup the db structures , but always do this in
 
 all the folders that npx sequelize init created we have move them inside the src folder
 inside config.json we need to setup our db details
+
+
+used this command npx sequelize model:generate --name City --attributes name:String to generate the model using the sequelize cli
+
+in the modes/city.js - these constraints will be added on the js level and migrations constraint will be applied on the db level
+
+
+npx sequelize db:migrate then used this command to create the tabkes actually , this will help migrate the db
