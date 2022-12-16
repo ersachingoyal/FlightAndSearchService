@@ -18,3 +18,7 @@ npx sequelize db:migrate then used this command to create the tabkes actually , 
 we should interact with our models through repository file
 
  npx sequelize db:migrate:undo   --> to drop the migration, if we have made some changes in the contraints of the DB , then we have to run this command and again run the migrate command
+
+ we have created the routes file to keep the routes segergated and have used express router there to allow prefix automatically match to our pass route :
+  -> for eg if we have /birds/home
+ -> /birds/about  -->> both of these routes have /birds in prefix , so express router will help to directly route /home to /birds/home and same the other one

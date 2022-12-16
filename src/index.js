@@ -2,6 +2,7 @@ const express = require('express');
 // require('dotenv').config();  -> we will move this process in config folder
 const { PORT } = require('./config/serverConfig')
 const bodyParser = require('body-parser');
+const ApiRoutes = require('./routes/index');
 
 // const CityRepository =  require('./repository/city-repository')
 
@@ -13,6 +14,8 @@ const setupAndStartServer = async() =>{
 
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: true}));
+
+    app.use('/api', ApiRoutes);
      
     app.listen(PORT, () =>{
         console.log("server started at port" ,PORT);
