@@ -1,5 +1,5 @@
 // repo file is used to interact with models , it exposes all the functions related to our model table
-
+const { Op } = require('sequelize');
 const { City } = require('../models/index');   // got access to the model to interact with the table
 
 class CityRepository{
@@ -59,9 +59,19 @@ class CityRepository{
         }
     }
 
-    async getAllCities(){
+    async getAllCities(filter){ // filter can be empty also
         try {
-            const cities = await City.findAll();
+            if(filter.name){ // this is fetching the cities based on name
+                const cities = await City.findAll({
+                    where:{
+                        name:{
+                            [Op.startsWith]: filter.name
+                        }
+                    }
+                });
+                return cities;
+            }
+            const cities = await City.findAll();  // this will give all the cities
             return cities;
         } catch (error) {
             console.log("Something went wrong");
