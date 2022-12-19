@@ -2,5 +2,7 @@
 // so for eg if we have 10 repo , then we have to write 10 require statement, but this help to write only 1 require line
 
 module.exports = {
-    CityRepository: require('./city-repository')
+    CityRepository: require('./city-repository'),
+    FlightRepository : require('./flight-repository'),
+    AirplaneRepository: require('./airplane-repository')
 }
