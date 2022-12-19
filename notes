@@ -13,7 +13,7 @@ used this command npx sequelize model:generate --name City --attributes name:Str
 in the modes/city.js - these constraints will be added on the js level and migrations constraint will be applied on the db level
 
 
-npx sequelize db:migrate then used this command to create the tabkes actually , this will help migrate the db
+npx sequelize db:migrate then used this command to create the tables actually , this will help migrate the db
 
 we should interact with our models through repository file
 
@@ -22,3 +22,9 @@ we should interact with our models through repository file
  we have created the routes file to keep the routes segergated and have used express router there to allow prefix automatically match to our pass route :
   -> for eg if we have /birds/home
  -> /birds/about  -->> both of these routes have /birds in prefix , so express router will help to directly route /home to /birds/home and same the other one
+
+
+ then we have created the airports model.
+
+ now we have two models, airports and city model, but a city can have many airports but an airport will be belong to only one city.
+ so city will be having one to many relationship with the airport, we have to create this relationship in the model js file 
