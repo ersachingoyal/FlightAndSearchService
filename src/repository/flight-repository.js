@@ -50,7 +50,7 @@ class FlightRepository {
     async getFlight(flightId){
         try {
             const flight = await Flights.findByPk(flightId);
-            return flight
+            return flight;
         } catch (error) {
             console.log("Something went wrong at the Repo layer");
             throw{error};
@@ -64,6 +64,20 @@ class FlightRepository {
                 where: filterObject
             });
             return flight;
+        } catch (error) {
+            console.log("Something went wrong at the Repo layer");
+            throw{error};
+        }
+    }
+
+    async updateFlights(flightId, data) {
+        try {
+            await Flights.update(data,{
+                where:{
+                    id: flightId
+                }
+            })
+            return true;
         } catch (error) {
             console.log("Something went wrong at the Repo layer");
             throw{error};
